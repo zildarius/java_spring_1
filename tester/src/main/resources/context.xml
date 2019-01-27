@@ -11,12 +11,12 @@
 
     <context:property-placeholder location="classpath*:*.properties"/>
 
-    <bean id = "questionDAO" class = "ru.otus.zid.dao.QuestionDAO">
+    <bean id = "questionDAO" class = "ru.otus.zid.dao.QuestionDAOImpl">
         <property name="questionsCsvFilePath" value="${csv_questions_path}"/>
-        <property name="SEPARATOR" value="${separator}"/>
+        <property name="separator" value="${separator}"/>
     </bean>
 
-    <bean id = "questionRunnerService" class = "ru.otus.zid.service.QuestionRunnerService">
+    <bean id = "questionRunnerService" class = "ru.otus.zid.service.QuestionRunnerServiceImpl">
         <constructor-arg ref="questionDAO"/>
     </bean>
 
